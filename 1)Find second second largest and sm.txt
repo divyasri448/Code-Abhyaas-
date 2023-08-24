@@ -1,0 +1,44 @@
+1)Find second second largest and smallest number in array
+#include <stdio.h>
+
+void findSecondLargestAndSmallest(int arr[], int size) {
+    if (size < 2) {
+        printf("Array size is too small to find second largest and smallest.\n");
+        return;
+    }
+
+    int firstLargest = arr[0], secondLargest = arr[0];
+    int firstSmallest = arr[0], secondSmallest = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > firstLargest) {
+            secondLargest = firstLargest;
+            firstLargest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != firstLargest) {
+            secondLargest = arr[i];
+        }
+
+        if (arr[i] < firstSmallest) {
+            secondSmallest = firstSmallest;
+            firstSmallest = arr[i];
+        } else if (arr[i] < secondSmallest && arr[i] != firstSmallest) {
+            secondSmallest = arr[i];
+        }
+    }
+
+    printf("Second Largest Element: %d\n", secondLargest);
+    printf("Second Smallest Element: %d\n", secondSmallest);
+}
+
+int main() {
+    int arr[] = { 5, 2, 8, 12, 1, 6 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    findSecondLargestAndSmallest(arr, size);
+
+    return 0;
+}
+
+output:
+Second Largest Element: 8
+Second Smallest Element: 2

@@ -1,0 +1,52 @@
+2)Remove dupilicate values in the array
+
+#include <stdio.h>
+
+int removeDuplicates(int arr[], int size) {
+    if (size <= 1) {
+        return size; // No duplicates to remove
+    }
+
+    int index = 1; // Index to track the last position of the non-duplicate element
+
+    for (int i = 1; i < size; i++) {
+        int j;
+        for (j = 0; j < index; j++) {
+            if (arr[i] == arr[j]) {
+                break; // Duplicate found, skip this element
+            }
+        }
+        
+        if (j == index) {
+            arr[index] = arr[i]; // Non-duplicate element found, move it to the next available position
+            index++;
+        }
+    }
+
+    return index; // Return the new size of the array
+}
+
+int main() {
+    int arr[] = { 2, 3, 4, 2, 5, 6, 4 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    int newSize = removeDuplicates(arr, size);
+
+    printf("Array with Duplicates Removed: ");
+    for (int i = 0; i < newSize; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+output:
+Original Array: 2 3 4 2 5 6 4 
+Array with Duplicates Removed: 2 3 4 5 6 
