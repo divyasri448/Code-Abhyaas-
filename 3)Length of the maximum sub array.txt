@@ -1,0 +1,28 @@
+3)Length of the maximum sub array 
+
+ #include <stdio.h>
+int maxSubArrayLength(int arr[], int n) {
+    int maxLength = 1;  
+    int currentLength = 1; 
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > arr[i - 1]) {
+            currentLength++;  
+            maxLength = (currentLength > maxLength) ? currentLength : maxLength;  
+        } else {
+            currentLength = 1;
+        }
+    }
+    return maxLength;
+}
+int main() {
+    int arr[] = {1, 2, 3, 2, 3, 4, 5, 1, 2};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int maxLength = maxSubArrayLength(arr, n);
+    printf("The length of the maximum subarray is: %d\n", maxLength);
+    return 0;
+}
+
+output:
+The length of the maximum subarray is: 4
+
+ 
