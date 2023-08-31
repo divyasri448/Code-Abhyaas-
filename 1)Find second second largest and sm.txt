@@ -1,4 +1,4 @@
-1)Find second second largest and smallest number in array
+2)Find second second largest and smallest number in array
 #include <stdio.h>
 
 void findSecondLargestAndSmallest(int arr[], int size) {
