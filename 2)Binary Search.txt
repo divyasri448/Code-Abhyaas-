@@ -1,4 +1,4 @@
-2)Binary Search
+5)Binary Search
 #include <stdio.h>
 int binarySearch(int array[], int x, int low, int high) {
   while (low <= high) {
