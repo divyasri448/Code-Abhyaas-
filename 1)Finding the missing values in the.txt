@@ -1,4 +1,4 @@
-1)Finding the missing values in the array
+3)Finding the missing values in the array
 
 #include <stdio.h>
 void main()
