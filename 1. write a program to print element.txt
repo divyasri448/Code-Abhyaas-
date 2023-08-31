@@ -1,4 +1,4 @@
-1. write a program to print element and its frequency in a array of elements.
+4) write a program to print element and its frequency in a array of elements.
 
 #include <stdio.h>
 int main()
